@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- YouTube Music Logo Simulation -->
+    <header>
+        <div class="logo">
+            <img src="youtube_music_logo_simulation.png" alt="YouTube Music" />
+            <h1>YouTube Music</h1>
+        </div>
+    </header>
+
+    <!-- Sidebar Navigation Menu -->
+    <div id="sidebar" class="sidebar">
+        <a href="#" class="closebtn" onclick="toggleSidebar()">×</a>
+        <a href="#artistProfile"><i class="icon icon-artist"></i> Artist Profile</a>
+        <a href="#uploadMusic"><i class="icon icon-upload"></i> Upload Music</a>
+        <a href="#createPlaylist"><i class="icon icon-playlist"></i> Create Playlist</a>
+        <a href="#audioPlayer"><i class="icon icon-player"></i> Audio Player</a>
+    </div>
+
+    <!-- Main content -->
+    <div id="main" class="main-content">
+        <button class="openbtn" onclick="toggleSidebar()">☰ Open Sidebar</button>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search for songs or videos..." />
+            <button onclick="searchContent()">Search</button>
+        </div>
+
+        <div class="container">
+            <!-- Sign-Up Section -->
+            <div class="sign-up-section" id="artistProfile">
+                <h2>Create Artist Profile</h2>
+                <label for="usernameInput">Username:</label>
+                <input type="text" id="usernameInput" placeholder="Enter username" />
+                
+                <label for="emailInput">Email:</label>
+                <input type="email" id="emailInput" placeholder="Enter email" />
+                
+                <label for="passwordInput">Password:</label>
+                <input type="password" id="passwordInput" placeholder="Enter password" />
+                
+                <label for="artistNameInput">Artist Name:</label>
+                <input type="text" id="artistNameInput" placeholder="Enter artist name" />
+                
+                <button id="signUpButton">Create Profile</button>
+                <div class="sign-up-status"></div>
+            </div>
+
+            <!-- Upload Section -->
+            <div class="upload-section" id="uploadMusic">
+                <h2>Upload Music</h2>
+                <label for="titleInput">Song Title:</label>
+                <input type="text" id="titleInput" placeholder="Enter song title" disabled />
+
+                <label for="artistInput">Artist Name:</label>
+                <input type="text" id="artistInput" placeholder="Enter artist name" disabled />
+
+                <label for="fileInput">Choose Audio File:</label>
+                <input type="file" id="fileInput" disabled />
+                
+                <!-- Upload Cover Art -->
+                <label for="coverArtInput">Upload Cover Art:</label>
+                <input type="file" id="coverArtInput" accept="image/*" disabled />
+
+                <button id="uploadButton" disabled>Upload Song</button>
+            </div>
+
+            <!-- Artist Profile Section -->
+            <div class="artist-profile-section">
+                <h2>Your Uploaded Songs</h2>
+                <ul id="fileList"></ul>
+            </div>
+
+            <!-- Create Playlist Section -->
+            <div class="playlist-section" id="createPlaylist">
+                <h2>Create Playlist</h2>
+                <label for="playlistName">Playlist Name:</label>
+                <input type="text" id="playlistName" placeholder="Enter playlist name" />
+                <button id="createPlaylistButton">Create Playlist</button>
+
+                <h3>Your Playlists</h3>
+                <ul id="playlistList"></ul>
+            </div>
+
+            <!-- Audio Player -->
+            <div class="audio-player" id="audioPlayer">
+                <h2>Audio Player</h2>
+                <audio id="audio" controls>
+                    <source src="" type="audio/mpeg" />
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
